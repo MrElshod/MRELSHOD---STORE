@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saytga kirish | MRELSHOD | STORE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-box">
+    <form id="loginForm">
+      <h2>Saytga kirish</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Parol" required />
+      <button type="submit" class="btn blue">Kirish</button>
+      <p class="form-link">Akkauntingiz yo‘qmi? <a href="index.html">Ro‘yxatdan o‘tish</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      const storedEmail = localStorage.getItem("registeredEmail");
+      const storedPassword = localStorage.getItem("registeredPassword");
+
+      if (email === storedEmail && password === storedPassword) {
+        localStorage.setItem("showWelcome", "true");
+        alert("Muvaffaqiyatli kirdingiz!");
+        window.location.href = "home.html";
+      } else {
+        alert("Email yoki parol noto‘g‘ri!");
+      }
+    });
+  </script>
+</body>
+</html>

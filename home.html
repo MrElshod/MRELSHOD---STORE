@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MRELSHOD | STORE - Bosh sahifa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+       <header class="site-header">
+    <div class="logo">MRELSHOD | STORE</div>
+    <a href="https://www.youtube.com/@MrElshod" target="_blank" class="settings-link">🎥 Mr.Elshod YouTube</a>
+  </header>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+    </ul>
+  </nav>
+      <div id="splash-message" class="splash" style="display: none;">
+    <span class="close-btn" onclick="closeSplash()">✖</span>
+    <h1>🎉 Xush kelibsiz <strong>MRELSHOD | STORE!</strong></h1>
+    <p>Bu yerda sizga kerakli narsalarni topasiz.</p>
+  </div>
+
+  <div class="product-card roblox">
+  <img src="i (10).png" alt="Roblox">
+  <h3>Roblox</h3>
+  <button onclick="window.location.href='robloxplace.html'">Bo‘limga o‘tish</button>
+  </div>
+
+<script>
+  function showCategory(category) {
+    const allItems = document.querySelectorAll('.product-card');
+    const selectedItems = document.querySelectorAll(`.${category}`);
+
+    allItems.forEach(item => item.style.display = 'none');
+    selectedItems.forEach(item => item.style.display = 'block');
+  }
+</script>
+
+</body>
+</html>

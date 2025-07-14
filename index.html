@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MRELSHOD | STORE - Ro'yxatdan o'tish</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-box">
+    <form id="registerForm">
+      <h2>Ro'yxatdan o'tish</h2>
+      <input type="text" id="name" placeholder="Ismingiz" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Parol" required />
+      <button type="submit" class="btn green">Ro‘yxatdan o‘tish</button>
+      <p class="form-link">Akkauntingiz bormi? <a href="login.html">Kirish</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      localStorage.setItem("registeredEmail", email);
+      localStorage.setItem("registeredPassword", password);
+      localStorage.setItem("showWelcome", "true");
+      window.location.href = "home.html";
+    });
+  </script>
+</body>
+</html>
